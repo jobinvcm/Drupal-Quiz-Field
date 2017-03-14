@@ -46,7 +46,32 @@ function hook_field_formatter_info() {
 /*
  * Implements hook_field_formatter_view()
  */
+function hook_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+    $element = array();
+    $settings = $display['settings'];
 
+    switch ($display['type']) {
+        case 'read_loud_formatter':
+            // Common case: each value is displayed individually in a sub-element
+            // keyed by delta. The field.tpl.php template specifies the markup
+            // wrapping each value.
+            foreach ($items as $delta => $item) {
+                $element[$delta] = array('#markup' => $item['value']);
+            }
+            break;
+
+        case 'repeat_sentence_formatter':
+            // More elaborate formatters can defer to a theme function for easier
+            // customization.
+            foreach ($items as $delta => $item) {
+                $element[$delta] = array('#markup' => $item['value']);
+                );
+            }
+            break;
+    }
+
+    return $element;
+}
 
 /*
  * Implemetns hook_field_widget_info()
