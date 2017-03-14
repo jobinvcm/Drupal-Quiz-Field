@@ -1,0 +1,32 @@
+<?php
+/*
+ * Implements hook_field_info()
+ */
+
+/*
+ * Implements hook_field_schema()
+ */
+
+/*
+ * Implements hook_field_validate()
+ */
+
+/*
+ * Implements hook_field_is_empty()
+ */
+
+/*
+ * Implements hook_field_formatter_info()
+ */
+
+/*
+ * Implements hook_field_formatter_view()
+ */
+
+/*
+ * Implemetns hook_field_widget_info()
+ */
+
+/*
+ * Implements hook_field_widget_form()
+ */
