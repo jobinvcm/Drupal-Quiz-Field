@@ -2,6 +2,18 @@
 /*
  * Implements hook_field_info()
  */
+function quiz_field_field_info() {
+    return array(
+        'quiz_field' => array(
+            'label' => t('Quiz PTE'),
+            'description' => t('Adding questions to PTE'),
+            'instance_settings' => array('text_processing' => 0),
+            'default_widget' => 'read_aloud_field',
+            'default_formatter' => 'read_aloud_formatter',
+        ),
+
+    );
+}
 
 /*
  * Implements hook_field_schema()
@@ -18,10 +30,23 @@
 /*
  * Implements hook_field_formatter_info()
  */
+function hook_field_formatter_info() {
+    return array(
+        'read_aloud_formatter' => array(
+            'label' => t('Read Aloud'),
+            'field types' => array('quiz_field'),
+        ),
+        'repeat_sentence_formatter' => array(
+            'label' => t('Repeat Sentence'),
+            'field types' => array('quiz_field'),
+        ),
+    );
+}
 
 /*
  * Implements hook_field_formatter_view()
  */
+
 
 /*
  * Implemetns hook_field_widget_info()
