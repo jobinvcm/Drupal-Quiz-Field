@@ -1,6 +1,7 @@
-name = Quiz Set Full
-description = Retrieving questions from various question formats
-package = PTE Speaking
-core = 7.x
 
+name = Quiz Field
+description = Defines Read Aloud Field for Quizzes
+version = VERSION
+core = 7.x
+package = PTE Speaking
 
